@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "candidates": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "geometry": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "number"
+                    },
+                    "lng": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "lat",
+                    "lng"
+                  ]
+                },
+                "viewport": {
+                  "type": "object",
+                  "properties": {
+                    "northeast": {
+                      "type": "object",
+                      "properties": {
+                        "lat": {
+                          "type": "number"
+                        },
+                        "lng": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "lat",
+                        "lng"
+                      ]
+                    },
+                    "southwest": {
+                      "type": "object",
+                      "properties": {
+                        "lat": {
+                          "type": "number"
+                        },
+                        "lng": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "lat",
+                        "lng"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "northeast",
+                    "southwest"
+                  ]
+                }
+              },
+              "required": [
+                "location",
+                "viewport"
+              ]
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "geometry",
+            "name"
+          ]
+        }
+      ]
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "candidates",
+    "status"
+  ]
+}
